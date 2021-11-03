@@ -1,0 +1,12 @@
+﻿  Game.cpp
+C:\Users\lucas\Documents\Universidad\2º DDV\1er Cuatrimestre\Programación Avanzada\Práticas\Prac1\Prac1_ProgAv\Color.h(10,7): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\lucas\Documents\Universidad\2º DDV\1er Cuatrimestre\Programación Avanzada\Práticas\Prac1\Prac1_ProgAv\Teapot.h(26,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\lucas\Documents\Universidad\2º DDV\1er Cuatrimestre\Programación Avanzada\Práticas\Prac1\Prac1_ProgAv\Cube.h(16,6): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+  Prac1_ProgAv.cpp
+C:\Users\lucas\Documents\Universidad\2º DDV\1er Cuatrimestre\Programación Avanzada\Práticas\Prac1\Prac1_ProgAv\Color.h(10,7): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\lucas\Documents\Universidad\2º DDV\1er Cuatrimestre\Programación Avanzada\Práticas\Prac1\Prac1_ProgAv\Teapot.h(26,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\lucas\Documents\Universidad\2º DDV\1er Cuatrimestre\Programación Avanzada\Práticas\Prac1\Prac1_ProgAv\Cube.h(16,6): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\lucas\Documents\Universidad\2º DDV\1er Cuatrimestre\Programación Avanzada\Práticas\Prac1\Prac1_ProgAv\Prac1_ProgAv.cpp(17,25): warning C4305: 'inicializando': truncamiento de 'double' a 'GLclampf'
+C:\Users\lucas\Documents\Universidad\2º DDV\1er Cuatrimestre\Programación Avanzada\Práticas\Prac1\Prac1_ProgAv\Prac1_ProgAv.cpp(18,27): warning C4305: 'inicializando': truncamiento de 'double' a 'GLclampf'
+  Generando código...
+  Prac1_ProgAv.vcxproj -> C:\Users\lucas\Documents\Universidad\2º DDV\1er Cuatrimestre\Programación Avanzada\Práticas\Prac1\Prac1_ProgAv\Debug\Prac1_ProgAv.exe
