@@ -8,10 +8,11 @@ private:
 	Vector3D coordinates;
 	Color colorCoords;
 	Vector3D orientation;
+	Vector3D orientationSpeed;
 
 public:
-	Solid() : coordinates(), colorCoords(), orientation(){}
-	Solid(Vector3D coords, Color color, Vector3D orient) : coordinates(coords), colorCoords(color), orientation(orient) {}
+	Solid() : coordinates(), colorCoords(), orientation(), orientationSpeed(){}
+	Solid(Vector3D coords, Color color, Vector3D orient, Vector3D orientSpeed) : coordinates(coords), colorCoords(color), orientation(orient), orientationSpeed(orientSpeed) {}
 
 	inline Vector3D getCoordinates() const {
 		return this->coordinates;
@@ -23,6 +24,10 @@ public:
 
 	inline Vector3D getOrientation() const {
 		return this->orientation;
+	}
+
+	inline Vector3D getOrientationSpeed() const {
+		return this->orientationSpeed;
 	}
 
 	inline void setCoordinates(Vector3D newCoordinates) {
@@ -43,6 +48,13 @@ public:
 		this->orientation.setCoordinateZ(newOrientation.getCoordinateZ());
 	}
 
+	inline void setOrientationSpeed(Vector3D newOrientationSpeed) {
+		this->orientationSpeed.setCoordinateX(newOrientationSpeed.getCoordinateX());
+		this->orientationSpeed.setCoordinateY(newOrientationSpeed.getCoordinateY());
+		this->orientationSpeed.setCoordinateZ(newOrientationSpeed.getCoordinateZ());
+	}
+
 	virtual void Render() = 0;
+	virtual void Update();
 };
 

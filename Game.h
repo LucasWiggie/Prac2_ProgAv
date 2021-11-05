@@ -6,46 +6,16 @@
 #include "Cuboid.h"
 #include "Cylinder.h"
 #include <vector>
+#include "Scene.h"
 
 using namespace std;
 
 class Game
 {
 private:
-	vector<Solid*> gameObjects;
-
-	/*Teapot teapot;
-	Cube cube;
-	Sphere sphere;
-	Torus torus;
-	Cuboid cuboid;
-	Cylinder cylinder;*/
-	
+	Scene sceneOne;
+		
 public:
-	/*inline Teapot GetTeapot() {
-		return this->teapot;
-	}
-
-	inline Cube GetCube() {
-		return this -> cube;
-	}
-
-	inline Sphere GetSphere() {
-		return this->sphere;
-	}
-
-	inline Torus GetTorus() {
-		return this->torus;
-	}
-
-	inline Cuboid GetCuboid() {
-		return this->cuboid;
-	}
-
-	inline Cylinder GetCylinder() {
-		return this->cylinder;
-	}*/
-	
 	void Init();
 	void Render();
 	void Update();
