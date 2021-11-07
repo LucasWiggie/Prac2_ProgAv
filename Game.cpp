@@ -16,6 +16,7 @@ void Game::ProcessMouseClick(int button, int state, int x, int y) {
 
 void Game::Init() {
 	
+
 	sceneOne.addGameObject();
 }
 
@@ -26,5 +27,7 @@ void Game::Render() {
 }
 
 void Game::Update() {
+
+	sceneOne.Update();
 
 }

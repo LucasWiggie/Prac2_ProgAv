@@ -17,5 +17,6 @@ private:
 public:
 	void addGameObject();
 	void Render();
+	void Update();
 };
 

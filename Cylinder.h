@@ -12,8 +12,8 @@ private:
 
 public:
 	Cylinder() : Solid(){}
-	Cylinder(Vector3D coords, Color color, Vector3D orient, double bRadius, double tRadius, double height, int slices, int stacks) : 
-		Solid(coords, color, orient), baseRadius(bRadius), topRadius(tRadius), height(height), slices(slices), stacks(stacks)  {}
+	Cylinder(Vector3D coords, Color color, Vector3D orient, Vector3D orientSpeed, double bRadius, double tRadius, double height, int slices, int stacks) :
+		Solid(coords, color, orient, orientSpeed), baseRadius(bRadius), topRadius(tRadius), height(height), slices(slices), stacks(stacks)  {}
 
 	inline double getBaseRadius() const{
 		return this->baseRadius;

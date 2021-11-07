@@ -13,7 +13,7 @@ private:
 
 public: 
 	Cuboid() : Solid() {}
-	Cuboid(Vector3D coords, Color color, Vector3D orient, float length, float height, float width) : Solid(coords, color, orient), length(length), height(height), width(width) {}
+	Cuboid(Vector3D coords, Color color, Vector3D orient, Vector3D orientSpeed, float length, float height, float width) : Solid(coords, color, orient, orientSpeed), length(length), height(height), width(width) {}
 
 	inline float getLength() const {
 		return this->length;
