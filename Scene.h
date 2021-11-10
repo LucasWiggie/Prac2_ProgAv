@@ -15,7 +15,7 @@ class Scene
 private:
 	vector<Solid*> gameObjects;
 public:
-	void addGameObject();
+	void addGameObject(Solid*);
 	void Render();
 	void Update();
 };

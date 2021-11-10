@@ -7,6 +7,7 @@
 #include "Cylinder.h"
 #include <vector>
 #include "Scene.h"
+#include "Camera.h"
 
 using namespace std;
 
