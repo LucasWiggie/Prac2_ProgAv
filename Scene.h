@@ -14,7 +14,20 @@ class Scene
 { 
 private:
 	vector<Solid*> gameObjects;
+	Vector3D boundary;
+
 public:
+
+	Scene() : boundary(8, 6, 4) {}
+
+	inline Vector3D getBoundary() const {
+		return this->boundary;
+	}
+
+	inline void setBoundary(const Vector3D newBoundary) {
+		this->boundary = newBoundary;
+	}
+
 	void addGameObject(Solid*);
 	void Render();
 	void Update();
