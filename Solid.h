@@ -60,9 +60,9 @@ public:
 	}
 
 	inline void setSpeed(Vector3D newSpeed) {
-		this->orientationSpeed.setCoordinateX(newSpeed.getCoordinateX());
-		this->orientationSpeed.setCoordinateY(newSpeed.getCoordinateY());
-		this->orientationSpeed.setCoordinateZ(newSpeed.getCoordinateZ());
+		this->speed.setCoordinateX(newSpeed.getCoordinateX());
+		this->speed.setCoordinateY(newSpeed.getCoordinateY());
+		this->speed.setCoordinateZ(newSpeed.getCoordinateZ());
 	}
 
 	virtual void Render() = 0;

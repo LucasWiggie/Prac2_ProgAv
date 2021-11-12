@@ -16,9 +16,11 @@ private:
 	vector<Solid*> gameObjects;
 	Vector3D boundary;
 
+	void checkBoundary(Solid*);
+
 public:
 
-	Scene() : boundary(8, 6, 4) {}
+	Scene() : boundary(Vector3D(8, 6, 4)) {}
 
 	inline Vector3D getBoundary() const {
 		return this->boundary;
