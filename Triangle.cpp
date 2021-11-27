@@ -1,5 +1,6 @@
 #include "Triangle.h"
 #include <GL/glut.h>
+
 void Triangle::Render() {
 	glBegin(GL_TRIANGLES);
 
@@ -9,6 +10,7 @@ void Triangle::Render() {
 		glNormal3f(getVertexNormal()[i].getCoordinateX(), getVertexNormal()[i].getCoordinateY(), getVertexNormal()[i].getCoordinateZ());
 		glVertex3f(getVertex()[i].getCoordinateX(), getVertex()[i].getCoordinateY(), getVertex()[i].getCoordinateZ());
 	}
+
 	glEnd();
 
 }

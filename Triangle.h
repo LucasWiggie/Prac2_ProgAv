@@ -11,14 +11,11 @@ private:
 	vector <Vector3D> vertexNormal;
 public:
 
-	Triangle() :Solid() {}
+	Triangle() : Solid() {}
 	Triangle(vector <Vector3D> _vertex, vector <Color> _vertexColor, vector <Vector3D> _vertexNormal,
 		Vector3D coords, Color color, Vector3D orient, Vector3D orientSpeed, Vector3D speed) :
 		Solid(coords, color, orient, orientSpeed, speed), vertex(_vertex), vertexColor(_vertexColor), vertexNormal(_vertexNormal) {};
-	
-	
-	
-	
+		
 	inline vector<Color> getVertexColor() {
 		return this->vertexColor;
 	}
@@ -31,7 +28,7 @@ public:
 		return this->vertexNormal;
 	}
 
-	inline void setVertexCOlor(vector <Color> newColor) {
+	inline void setVertexColor(vector <Color> newColor) {
 		this->vertexColor = newColor;
 	}
 	
@@ -39,7 +36,7 @@ public:
 		this->vertex = newVertex;
 	}
 
-	inline void setverteNormal(vector<Vector3D> newVertexNormal) {
+	inline void setVertexNormal(vector<Vector3D> newVertexNormal) {
 		this->vertexNormal = newVertexNormal;
 	}
 	
