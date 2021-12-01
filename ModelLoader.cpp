@@ -62,9 +62,9 @@ Triangle ModelLoader::parseObjTriangle(const string& line) {
 
 	istringstream stringStream(line);
 	stringStream >> c; 
-	stringStream >> idxVertex0 >> c >> c >> idxNormal0;
-	stringStream >> idxVertex1 >> c >> c >> idxNormal1;
-	stringStream >> idxVertex2 >> c >> c >> idxNormal2;
+	stringStream >> idxVertex0 >> c >> idxNormal0;
+	stringStream >> idxVertex1 >> c >> idxNormal1;
+	stringStream >> idxVertex2 >> c >> idxNormal2;
 
 	Vector3D vertex0 = this->vertexList[idxVertex0 - 1];
 	Vector3D vertex1 = this->vertexList[idxVertex1 - 1];

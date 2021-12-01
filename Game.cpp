@@ -16,7 +16,7 @@ void Game::ProcessMouseClick(int button, int state, int x, int y) {
 
 void Game::Init() {
 	
-	/*
+	
 	// CAMERA
 	// Camera(Vector3D coords, Color color, Vector3D orientation, Vector3D orientSpeed) : Solid(coords, color, orientation, orientSpeed)
 	Vector3D newCameraCoords = Vector3D(4, 3, 12);
@@ -25,6 +25,7 @@ void Game::Init() {
 	Camera* camera = new Camera(newCameraCoords, Color(0, 0, 0), newCameraOrientation, Vector3D(0, 0, 0), Vector3D(0, 0, 0));
 	sceneOne.addGameObject(camera);
 
+	/*
 	// TEAPOT
 	Vector3D newTeapotCoords = Vector3D(0, 0, 2);
 	Color newTeapotColor = Color(0, 0.2, 0);
@@ -89,7 +90,7 @@ void Game::Init() {
 	ModelLoader* loader = new ModelLoader();
 
 	Model* jesus = new Model();
-	loader->loadModel("..\\..\\3D\\20facestar.obj");
+	loader->loadModel("..\\..\\3dModels\\stewie.obj");
 	*jesus = loader->getModel();
 	jesus->setCoordinates(Vector3D(0,0,0));
 	jesus->setOrientation(Vector3D(0, 30, 30));
