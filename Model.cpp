@@ -4,9 +4,11 @@
 void Model::addTriangle(Triangle triangle) {
 	this->getTriangleList().push_back(triangle);
 };
+
 void Model::clear() {
 	triangleList.clear();
 };
+
 void Model::paintColor(Color color) {
 	for (int i = 0; i < triangleList.size(); i++) {
 		for (int j = 0; j < 3; j++) {
@@ -16,6 +18,7 @@ void Model::paintColor(Color color) {
 		}
 	}
 };
+
 void Model::Render() {
 
 	glPushMatrix();

@@ -9,6 +9,7 @@ private:
 	vector <Vector3D> vertex;
 	vector <Color> vertexColor;
 	vector <Vector3D> vertexNormal;
+
 public:
 
 	Triangle() : Solid() {}

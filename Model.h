@@ -2,6 +2,7 @@
 #include "Solid.h"
 #include "Triangle.h"
 #include <vector>
+
 class Model : public Solid
 {
 private:
@@ -24,9 +25,6 @@ public:
 	void clear();
 	void paintColor(Color color);
 	void Render();
-
-
-
 
 };
 

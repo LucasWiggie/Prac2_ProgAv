@@ -23,7 +23,6 @@ void ModelLoader :: calcBoundaries(Vector3D vertex) {
 	
 }
 
-// REPASAAAAAAR!!!!!! *Duda Foro
 Triangle ModelLoader :: center(Triangle triangle) {
 
 	float xCenter = (this->minX + this->getWidth()) / 2.0;
@@ -56,7 +55,6 @@ Vector3D ModelLoader :: parseObjLineToVector3D(const string& line) {
 }
 
 
-// REPASAAAAAAR!!!!!! *Duda Foro
 Triangle ModelLoader::parseObjTriangle(const string& line) {
 	char c;
 	int idxVertex0, idxVertex1, idxVertex2;
@@ -127,4 +125,10 @@ void ModelLoader::loadModel(const string& filePath) {
 		cout << "Excepcion al procesar el archivo: " << filePath << endl;
 		cout << ex.what() << endl;
 	}
+}
+
+void ModelLoader::clear() {
+	vertexList.clear();
+	normalList.clear();
+	model.getTriangleList().clear();
 }

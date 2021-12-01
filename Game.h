@@ -8,6 +8,8 @@
 #include <vector>
 #include "Scene.h"
 #include "Camera.h"
+#include "Model.h"
+#include "ModelLoader.h"
 
 using namespace std;
 
