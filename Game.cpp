@@ -25,7 +25,7 @@ void Game::Init() {
 	Camera* camera = new Camera(newCameraCoords, Color(0, 0, 0), newCameraOrientation, Vector3D(0, 0, 0), Vector3D(0, 0, 0));
 	sceneOne.addGameObject(camera);
 
-	/*
+	
 	// TEAPOT
 	Vector3D newTeapotCoords = Vector3D(0, 0, 2);
 	Color newTeapotColor = Color(0, 0.2, 0);
@@ -85,18 +85,18 @@ void Game::Init() {
 
 	Cylinder* cylinder = new Cylinder(newCylinderCoords, newCylinderColor, newCylinderOrientation, newCylinderOrientationSpeed, newCylinderSpeed, 0.4, 0.4, 0.5, 50, 50);
 	sceneOne.addGameObject(cylinder);
-	*/
+	
 
 	ModelLoader* loader = new ModelLoader();
-
+	
 	Model* jesus = new Model();
-	loader->loadModel("..\\..\\3dModels\\stewie.obj");
+	loader->loadModel("Pig.obj");
 	*jesus = loader->getModel();
-	jesus->setCoordinates(Vector3D(0,0,0));
-	jesus->setOrientation(Vector3D(0, 30, 30));
-	jesus->setOrientationSpeed(Vector3D(0, 0.7, 0));
-	jesus->setSpeed(Vector3D(0.03, 0.02, 0.01));
-	jesus->paintColor(Color(0.2, 0.3, 0.1));
+	jesus->setCoordinates(Vector3D(0,0.8,2.3));
+	jesus->setOrientation(Vector3D(30, -60, -10));
+	jesus->setOrientationSpeed(Vector3D(3, 2, 1));
+	jesus->setSpeed(Vector3D(0.01, 0.02, 0.31));
+	jesus->paintColor(Color(0.2, 0.5, 0.1));
 
 	this->sceneOne.addGameObject(jesus);
 

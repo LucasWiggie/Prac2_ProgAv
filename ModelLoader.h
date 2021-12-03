@@ -43,8 +43,8 @@ public:
 		this->scale = newScale;
 	}
 
-	inline void loadModel(const string& filePath);
+	void loadModel(const string& filepath);
 
-	inline void clear();
+	void clear();
 };
 

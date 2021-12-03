@@ -10,6 +10,7 @@ void Model::clear() {
 };
 
 void Model::paintColor(Color color) {
+	
 	for (int i = 0; i < triangleList.size(); i++) {
 		for (int j = 0; j < 3; j++) {
 			triangleList[i].getVertexColor()[j].setRedComponent(color.getRedComponent());
