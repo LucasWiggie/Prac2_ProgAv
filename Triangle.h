@@ -6,39 +6,103 @@ using namespace std;
 class Triangle : public Solid
 {
 private:
-	vector <Vector3D> vertex;
-	vector <Color> vertexColor;
-	vector <Vector3D> vertexNormal;
+	
+	//Vertices
+	Vector3D vertex0;
+	Vector3D vertex1;
+	Vector3D vertex2;
+
+	//Color de los vertices
+	Color vertexColor0;
+	Color vertexColor1;
+	Color vertexColor2;
+
+	//Normales
+	Vector3D vertexNormal0;
+	Vector3D vertexNormal1;
+	Vector3D vertexNormal2;
 
 public:
 
 	Triangle() : Solid() {}
-	Triangle(vector <Vector3D> _vertex, vector <Color> _vertexColor, vector <Vector3D> _vertexNormal,
-		Vector3D coords, Color color, Vector3D orient, Vector3D orientSpeed, Vector3D speed) :
-		Solid(coords, color, orient, orientSpeed, speed), vertex(_vertex), vertexColor(_vertexColor), vertexNormal(_vertexNormal) {};
-		
-	inline vector<Color> getVertexColor() {
-		return this->vertexColor;
+	Triangle(Vector3D _vertex0, Vector3D _vertex1, Vector3D _vertex2, Color _vertexColor0, Color _vertexColor1, Color _vertexColor2, Vector3D _vertexNormal0,
+		Vector3D _vertexNormal1, Vector3D _vertexNormal2,Vector3D coords, Color color, Vector3D orient, Vector3D orientSpeed, Vector3D speed) :
+		Solid(coords, color, orient, orientSpeed, speed), vertex0(_vertex0), vertex1(_vertex1), vertex2(_vertex2), vertexColor0(_vertexColor0), 
+		vertexColor1(_vertexColor1), vertexColor2(_vertexColor2), vertexNormal0(_vertexNormal0), vertexNormal1(_vertexNormal1), vertexNormal2(_vertexNormal2) {};
+	
+
+	// GETTERS
+	inline Vector3D getVertex0() {
+		return this->vertex0;
 	}
 
-	inline vector<Vector3D> getVertex() {
-		return this->vertex;
+	inline Vector3D getVertex1() {
+		return this->vertex1;
 	}
 
-	inline vector<Vector3D> getVertexNormal() {
-		return this->vertexNormal;
+	inline Vector3D getVertex2() {
+		return this->vertex2;
 	}
 
-	inline void setVertexColor(vector <Color> newColor) {
-		this->vertexColor = newColor;
+	inline Color getVertexColor0() {
+		return this->vertexColor0;
+	}
+
+	inline Color getVertexColor1() {
+		return this->vertexColor1;
+	}
+
+	inline Color getVertexColor2() {
+		return this->vertexColor2;
 	}
 	
-	inline void setVertex(vector<Vector3D> newVertex) {
-		this->vertex = newVertex;
+	inline Vector3D getVertexNormal0() {
+		return this->vertexNormal0;
 	}
 
-	inline void setVertexNormal(vector<Vector3D> newVertexNormal) {
-		this->vertexNormal = newVertexNormal;
+	inline Vector3D getVertexNormal1() {
+		return this->vertexNormal1;
+	}
+
+	inline Vector3D getVertexNormal2() {
+		return this->vertexNormal2;
+	}
+
+	// SETTERS
+	inline void setVertex0(Vector3D newVertex0) {
+		this->vertex0 = newVertex0;
+	}
+
+	inline void setVertex1(Vector3D newVertex1) {
+		this->vertex1 = newVertex1;
+	}
+
+	inline void setVertex2(Vector3D newVertex2) {
+		this->vertex2 = newVertex2;
+	}
+
+	inline void setVertexColor0(Color newColor0) {
+		this->vertexColor0 = newColor0;
+	}
+
+	inline void setVertexColor1(Color newColor1) {
+		this->vertexColor1 = newColor1;
+	}
+
+	inline void setVertexColor2(Color newColor2) {
+		this->vertexColor2 = newColor2;
+	}
+	
+	inline void setVertexNormal0(Vector3D newVertexNormal0) {
+		this->vertexNormal0 = newVertexNormal0;
+	}
+
+	inline void setVertexNormal1(Vector3D newVertexNormal1) {
+		this->vertexNormal1 = newVertexNormal1;
+	}
+
+	inline void setVertexNormal2(Vector3D newVertexNormal2) {
+		this->vertexNormal2 = newVertexNormal2;
 	}
 	
 	void Render();
