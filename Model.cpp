@@ -2,7 +2,7 @@
 #include <GL/glut.h>
 
 void Model::addTriangle(Triangle triangle) {
-	this->getTriangleList().push_back(triangle);
+	triangleList.push_back(triangle);
 };
 
 void Model::clear() {

@@ -17,6 +17,7 @@ public:
 	vector<Triangle> getTriangleList() {
 		return this->triangleList;
 	}
+
 	void setTriangleList(vector <Triangle> newTriangleList) {
 		this->triangleList = newTriangleList;
 	}

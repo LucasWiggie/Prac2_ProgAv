@@ -22,28 +22,33 @@ private:
 	float maxZ;
 	float minZ;
 
-	inline float getWidth();
-	inline float getHeight();
-	inline float getLength();
-	inline void calcBoundaries(Vector3D vertex);
-	inline Triangle center(Triangle triangle);
-	inline Vector3D parseObjLineToVector3D(const string& line);
-	inline Triangle parseObjTriangle(const string& line);
+	float getWidth();
+	float getHeight();
+	float getLength();
+	void calcBoundaries(Vector3D vertex);
+
+	Triangle center(Triangle triangle);
+	Vector3D parseObjLineToVector3D(const string& line);
+	Triangle parseObjTriangle(const string& line);
 
 public:
-	inline Model getModel() {
-		return this->model;
-	}
-
-	inline float getScale() {
+	inline float getScale() const {
 		return this->scale;
 	}
 
-	inline void setScale(float newScale) {
+	inline Model getModel() const {
+		return this->model;
+	}
+
+	inline void setScale(const float& newScale) {
 		this->scale = newScale;
 	}
 
-	void loadModel(const string& filepath);
+	inline void setModel(const Model& newModel) {
+		this->model = newModel;
+	}
+
+	void loadModel(const string& filePath);
 
 	void clear();
 };

@@ -17,35 +17,33 @@ void ModelLoader :: calcBoundaries(Vector3D vertex) {
 	this->maxX = fmax(this->maxX, vertex.getCoordinateX());
 	this->maxY = fmax(this->maxY, vertex.getCoordinateY());
 	this->maxZ = fmax(this->maxZ, vertex.getCoordinateZ());
-	this->minX = fmax(this->minX, vertex.getCoordinateX());
-	this->minY = fmax(this->minY, vertex.getCoordinateY());
-	this->minZ = fmax(this->minZ, vertex.getCoordinateZ());
+
+	this->minX = fmin(this->minX, vertex.getCoordinateX());
+	this->minY = fmin(this->minY, vertex.getCoordinateY());
+	this->minZ = fmin(this->minZ, vertex.getCoordinateZ());
 	
 }
 
 Triangle ModelLoader :: center(Triangle triangle) {
 
-	float xCenter = (this->minX + this->getWidth()) / 2.0;
-	float yCenter = (this->minY + this->getHeight()) / 2.0;
-	float zCenter = (this->minZ + this->getLength()) / 2.0;
-	Vector3D center = Vector3D(xCenter, yCenter, zCenter);
+	Vector3D modelCenter(this->minX + this->getWidth() / 2.0,
+		this->minY + this->getHeight() / 2.0,
+		this->minZ + this->getLength() / 2.0);
 
-	Triangle newTriangle = triangle;
-	Vector3D newVertex0 = newTriangle.getVertex()[0] - center;
-	Vector3D newVertex1 = newTriangle.getVertex()[1] - center;
-	Vector3D newVertex2 = newTriangle.getVertex()[2] - center;
+	Triangle centeredTriangle(
+		triangle.getVertex0() - modelCenter,
+		triangle.getVertex1() - modelCenter,
+		triangle.getVertex2() - modelCenter,
+		triangle.getVertexNormal0(),
+		triangle.getVertexNormal1(),
+		triangle.getVertexNormal2());
 
-	vector<Vector3D> newVertex;
-	newVertex.push_back(newVertex0);
-	newVertex.push_back(newVertex1);
-	newVertex.push_back(newVertex2);
+	return centeredTriangle;
 
-	newTriangle.setVertex(newVertex);
-
-	return newTriangle;
 }
 
 Vector3D ModelLoader :: parseObjLineToVector3D(const string& line) {
+	
 	string typeOfPoint;
 	float xCoordinate, yCoordinate, zCoordinate;
 	istringstream stringStream(line);
@@ -53,7 +51,6 @@ Vector3D ModelLoader :: parseObjLineToVector3D(const string& line) {
 	Vector3D vectorPoint(xCoordinate, yCoordinate, zCoordinate);
 	return vectorPoint * this->getScale();
 }
-
 
 Triangle ModelLoader::parseObjTriangle(const string& line) {
 	char c;
@@ -71,20 +68,8 @@ Triangle ModelLoader::parseObjTriangle(const string& line) {
 	Vector3D vertex2 = this->vertexList[idxVertex2 - 1];
 	Vector3D normal = this->normalList[idxNormal0 - 1];
 
-	vector<Vector3D> newVertex;
-	newVertex.push_back(vertex0);
-	newVertex.push_back(vertex1);
-	newVertex.push_back(vertex2);
-
-	vector<Vector3D> newNormal;
-	newNormal.push_back(normal);
-	newNormal.push_back(normal);
-	newNormal.push_back(normal);
-
-	Triangle parsedTriangle = Triangle();
-	parsedTriangle.setVertex(newVertex);
-	parsedTriangle.setVertexNormal(newNormal);
-
+	Triangle parsedTriangle = Triangle(vertex0, vertex1, vertex2, normal, normal, normal);
+	
 	return parsedTriangle;
 }
 
@@ -98,6 +83,7 @@ void ModelLoader::loadModel(const string& filePath) {
 			int count = 0;
 			
 			while (getline(objFile, line)) {
+
 				if (line[0] == 'v' && line[1] == 'n') {
 					Vector3D normal = this->parseObjLineToVector3D(line);
 					this->normalList.push_back(normal);
@@ -111,13 +97,14 @@ void ModelLoader::loadModel(const string& filePath) {
 					Triangle triangle = this->parseObjTriangle(line);
 					this->model.addTriangle(this->center(triangle));
 				}
+
 			}
 
 			objFile.close();
 
 		}
 		else {
-			cout << "No se ha podido abir el archivo: " << filePath << endl;
+			cout << "No se ha podido abrir el archivo: " << filePath << endl;
 		}
 
 	}
@@ -127,10 +114,10 @@ void ModelLoader::loadModel(const string& filePath) {
 	}
 }
 
-
-
 void ModelLoader::clear(){
+	
 	vertexList.clear();
 	normalList.clear();
 	model.getTriangleList().clear();
+
 }
